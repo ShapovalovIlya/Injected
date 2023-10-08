@@ -12,7 +12,7 @@ public struct Injected<T> {
         set { InjectedValues[keyPath] = newValue }
     }
     
-    public init(keyPath: WritableKeyPath<InjectedValues, T>) {
+    public init(_ keyPath: WritableKeyPath<InjectedValues, T>) {
         self.keyPath = keyPath
     }
 }
