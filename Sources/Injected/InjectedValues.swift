@@ -15,16 +15,16 @@ public struct InjectedValues {
     public static subscript<K>(key: K.Type) -> K.Value where K:InjectionKey {
         get {
             switch Context.init() {
-            case .live: return key.live
-            case .preview: return key.preview
-            case .test: return key.test
+            case .live: return key.liveValue
+            case .preview: return key.previewValue
+            case .test: return key.testValue
             }
         }
         set {
             switch Context.init() {
-            case .live: key.live = newValue
-            case .preview: key.preview = newValue
-            case .test: key.test = newValue
+            case .live: key.liveValue = newValue
+            case .preview: key.previewValue = newValue
+            case .test: key.testValue = newValue
             }
         }
     }
