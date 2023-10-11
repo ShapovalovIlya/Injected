@@ -3,7 +3,10 @@ import XCTest
 
 final class InjectedTests: XCTestCase {
    
-    func test() {
-        
+    func test_context() {
+        XCTAssertEqual(
+            InjectedValues.Context(),
+            .test
+        )
     }
 }
