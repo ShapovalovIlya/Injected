@@ -22,6 +22,12 @@ public protocol InjectionKey {
 }
 
 public extension InjectionKey {
-    static var testValue: Value { Self.liveValue }
-    static var previewValue: Value { Self.liveValue }
+    static var testValue: Value {
+        get { Self.liveValue }
+        set {}
+    }
+    static var previewValue: Value {
+        get { Self.liveValue }
+        set {}
+    }
 }
